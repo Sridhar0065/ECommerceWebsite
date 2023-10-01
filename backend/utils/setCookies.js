@@ -6,7 +6,9 @@ exports.setCookies = (user,res,statusCode)=>{
     });
     res.status(statusCode).cookie("token",token,{
         httpOnly : true,
-        expires : new Date(Date.now() + process.env.COOKIE_EXPIRES*24*60*60*1000)
+        expires : new Date(Date.now() + process.env.COOKIE_EXPIRES*24*60*60*1000),
+        secure : true,
+        samesite : none
     }).json({
         success:true,
         user,
