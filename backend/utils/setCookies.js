@@ -8,7 +8,7 @@ exports.setCookies = (user,res,statusCode)=>{
         httpOnly : true,
         expires : new Date(Date.now() + process.env.COOKIE_EXPIRES*24*60*60*1000),
         secure : true,
-        samesite : none
+        sameSite : "none"
     }).json({
         success:true,
         user,
